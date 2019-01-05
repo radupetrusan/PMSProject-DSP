@@ -1,0 +1,13 @@
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\NAudio.dll
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\NAudio.xml
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\spectrograph.csprojAssemblyReference.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\spectrograph.csproj.GenerateResource.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\spectrograph.csproj.CoreCompileInputs.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\spectrograph.csproj.CopyComplete
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
