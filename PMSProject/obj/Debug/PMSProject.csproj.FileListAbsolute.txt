@@ -24,3 +24,16 @@ E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\PMSProject\PM
 E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\PMSProject\PMSProject\obj\Debug\PMSProject.csproj.CopyComplete
 E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\PMSProject\PMSProject\obj\Debug\PMSProject.exe
 E:\Radu\Faculta\Master\Anul 1\PMS\18-01-11_microphone_spectrograph\PMSProject\PMSProject\obj\Debug\PMSProject.pdb
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.exe.config
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.exe
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.pdb
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\bin\Debug\NAudio.dll
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\bin\Debug\NAudio.xml
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csprojAssemblyReference.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.MainForm.resources
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.Properties.Resources.resources
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csproj.GenerateResource.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csproj.CoreCompileInputs.cache
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csproj.CopyComplete
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.exe
+E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.pdb
