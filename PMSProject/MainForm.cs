@@ -171,40 +171,35 @@ namespace PMSProject
                 new_data.Add(val);
             }
 
+            var filterRange = 20;
+
             var myData = new_data.ToList();
+            myData.RemoveRange(300, new_data.Count - 300);
 
             var firstIndex = myData.MaxIndex();
-            var filter = 20;
-            if (firstIndex >= filter)
-            {
-                myData.RemoveRange(firstIndex - filter, filter * 2 + 1);
-            }
+            
+            ArrayUtils<double>.RemovePeakNeighbours(myData, firstIndex, filterRange);
 
             var secondIndex = myData.MaxIndex();
-
             var myOtherData = myData.ToList();
-
-            if (secondIndex >= filter)
-            {
-                myOtherData.RemoveRange(secondIndex - filter, filter * 2 + 1);
-            }
+            ArrayUtils<double>.RemovePeakNeighbours(myOtherData, secondIndex, filterRange);
             var thirdIndex = myOtherData.MaxIndex();
 
             var firstFreq = firstIndex * rate / fft_size;
             var secondFreq = secondIndex * rate / fft_size;
             var thirdFreq = thirdIndex * rate / fft_size;
 
-            if (new_data[firstIndex] < 1)
+            if (new_data[firstIndex] < 0.5)
             {
                 firstFreq = secondFreq = thirdFreq = -1;
             }
 
-            if (new_data[secondIndex] < 0.5)
+            if (new_data[secondIndex] < 0.25)
             {
                 secondFreq = thirdFreq = -1;
             }
 
-            if (new_data[thirdIndex] < 0.5)
+            if (new_data[thirdIndex] < 0.125)
             {
                 thirdFreq = -1;
             }
