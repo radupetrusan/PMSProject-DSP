@@ -37,3 +37,14 @@ E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject
 E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csproj.CopyComplete
 E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.exe
 E:\Radu\Faculta\Master\Anul 1\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.pdb
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.exe.config
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.exe
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.pdb
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.exe
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\bin\Debug\PMSProject.pdb
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\bin\Debug\NAudio.dll
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\bin\Debug\NAudio.xml
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csprojResolveAssemblyReference.cache
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.MainForm.resources
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.Properties.Resources.resources
+E:\AC\Master\PMS\PMSProject-DSP\PMSProject\obj\Debug\PMSProject.csproj.GenerateResource.Cache

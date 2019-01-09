@@ -19,15 +19,23 @@ namespace PMSProject.Utils
         private static Pen NOTE_PEN = new Pen(Color.Black, 2);
         //private static Brush NOTE_BRUSH = Brushes.Black;
         public static Boolean ADDITIONAL_BAR = true;
-        public static int NOTE_DISTANCTE = 80;
+        public static int NOTE_DISTANCTE = 120;
 
         private static Graphics _graphics;
+
+        private static Dictionary<string, PictureBox> _signList;
 
         public static void InitializeGraphics(Graphics graphics)
         {
             _graphics = graphics;
             _graphics.SmoothingMode = SmoothingMode.HighQuality;
         }
+
+        public static void InitializeSigns(Dictionary<string, PictureBox> list)
+        {
+            _signList = list;
+        }
+
 
         public static void InitializePanel(Panel musicPanel, Note note)
         {
@@ -44,6 +52,9 @@ namespace PMSProject.Utils
                     _graphics.DrawLine(Pens.Black, 15, i * STAFF_HEIGHT, musicPanel.Width, i * STAFF_HEIGHT);
                 }
             }
+
+            //set all sharps/flats as invisible
+
         }
 
         public static void DrawNote(Note note, Panel musicPanel)
@@ -57,7 +68,7 @@ namespace PMSProject.Utils
             {
                 if (note.NoteName == "C" && note.Scale == 4)
                 {
-                    _graphics.DrawLine(NOTE_PEN, NOTE_DISTANCTE - 5, 6 * STAFF_HEIGHT, NOTE_DISTANCTE + NOTE_WIDTH + 5 , 6 * STAFF_HEIGHT);
+                    _graphics.DrawLine(NOTE_PEN, NOTE_DISTANCTE - 5, 6 * STAFF_HEIGHT, NOTE_DISTANCTE + NOTE_WIDTH + 5, 6 * STAFF_HEIGHT);
 
                 }
                 else if (note.NoteName == "E" && note.Scale == 2)
@@ -75,6 +86,15 @@ namespace PMSProject.Utils
 
             if (2 <= scale && scale <= 5)
             {
+                try {
+                    _signList[note.FullNoteName].Visible = true;
+                }
+                catch
+                {
+
+                }
+
+
                 switch (scale)
                 {
                     case 2:
