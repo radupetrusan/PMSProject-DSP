@@ -273,6 +273,7 @@ namespace PMSProject
         {
             PanelUtils.InitializeGraphics(e.Graphics);
             PanelUtils.InitializePanel(panel1, null);
+            PanelUtils.InitializeSigns(GetSharpsFlatsPicBoxes());
 
             PanelUtils.DrawNote(_firstNote, panel1);
             PanelUtils.DrawNote(_secondNote, panel1);
@@ -282,6 +283,47 @@ namespace PMSProject
         private void timer2_Tick(object sender, EventArgs e)
         {
             this.Refresh();
+            RefreshSigns();
+        }
+
+        private void RefreshSigns()
+        {
+            Dictionary<string, PictureBox> list = GetSharpsFlatsPicBoxes(); 
+
+            foreach(var lst in list)
+            {
+                lst.Value.Visible = false;
+            }
+        }
+
+
+        public Dictionary<string, PictureBox> GetSharpsFlatsPicBoxes()
+        {
+            var ls = new Dictionary<string,PictureBox>();
+
+            ls.Add("F#/Gb2", Fs2);
+            ls.Add("F#/Gb3", Fs3);
+            ls.Add("F#/Gb4", Fs4);
+            ls.Add("F#/Gb5", Fs5);
+
+
+            ls.Add("C#/Db3", Cs3);
+            ls.Add("C#/Db4", Cs4);
+            ls.Add("C#/Db5", Cs5);
+
+            ls.Add("G#/Ab2", Ab2);
+            ls.Add("G#/Ab3", Ab3);
+            ls.Add("G#/Ab4", Ab4);
+
+            ls.Add("A#/Bb2", Bb2);
+            ls.Add("A#/Bb3", Bb3);
+            ls.Add("A#/Bb4", Bb4);
+
+            ls.Add("D#/Eb3", Eb3);
+            ls.Add("D#/Eb4", Eb4);
+            ls.Add("D#/Eb5", Eb5);
+
+            return ls;
         }
     }
 }
