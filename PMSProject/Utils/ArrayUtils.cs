@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSProject.Utils
 {
-    public static class ArrayUtils<T>
+    public static class ArrayUtils
     {
-        public static void RemovePeakNeighbours(List<T> list, int peakIndex, int range)
+        public static void RemovePeakNeighbours(List<double> list, int peakIndex, int range)
         {
             var index = peakIndex - range;
             if (index < 0)
@@ -23,7 +23,12 @@ namespace PMSProject.Utils
                 count = list.Count - index;
             }
 
-            list.RemoveRange(index, count);
+            for (var i = index; i < index + count; i++)
+            {
+                list[i] = 0;
+            }
+
+            //list.RemoveRange(index, count);
         }
     }
 }
