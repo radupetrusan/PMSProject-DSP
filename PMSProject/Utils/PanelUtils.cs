@@ -19,7 +19,7 @@ namespace PMSProject.Utils
         private static Pen NOTE_PEN = new Pen(Color.Black, 2);
         //private static Brush NOTE_BRUSH = Brushes.Black;
         public static Boolean ADDITIONAL_BAR = true;
-        public static int NOTE_DISTANCTE = 120;
+        public static int NOTE_DISTANCTE = 130;
 
         private static Graphics _graphics;
 
@@ -57,7 +57,7 @@ namespace PMSProject.Utils
 
         }
 
-        public static void DrawNote(Note note, Panel musicPanel)
+        public static void DrawNote(Note note, Panel musicPanel, bool showSigns)
         {
             if (note == null || musicPanel == null)
             {
@@ -86,14 +86,17 @@ namespace PMSProject.Utils
 
             if (2 <= scale && scale <= 5)
             {
-                try {
-                    _signList[note.FullNoteName].Visible = true;
-                }
-                catch
+                if (showSigns)
                 {
+                    try
+                    {
+                        _signList[note.FullNoteName].Visible = true;
+                    }
+                    catch
+                    {
 
+                    }
                 }
-
 
                 switch (scale)
                 {

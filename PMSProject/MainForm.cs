@@ -16,13 +16,19 @@ namespace PMSProject
 {
     public partial class MainForm : Form
     {
-        private Note _firstNote;
-        private Note _secondNote;
-        private Note _thirdNote;
+        private Note _firstNote = new Note();
+        private Note _secondNote = new Note();
+        private Note _thirdNote = new Note();
+
+        private Note _newFirstNote = new Note();
+        private Note _newSecondNote = new Note();
+        private Note _newThirdNote = new Note();
+
+        private Dictionary<string, PictureBox> signs;
 
         private static int _buffersCaptured = 0; // total number of audio buffers filled
 
-        private static double unanalyzed_max_sec; // maximum amount of unanalyzed audio to maintain in memory
+        private static double unanalyzed_max_sec = 2.5; // maximum amount of unanalyzed audio to maintain in memory
         private static List<short> unanalyzed_values = new List<short>(); // audio data lives here waiting to be analyzed
 
         private static List<List<double>> spectrogram_data = new List<List<double>>(); // columns are time points, rows are frequency points
@@ -30,28 +36,29 @@ namespace PMSProject
         private static int SPECTROGRAM_HEIGHT;
         private static int _pixelsPerBuffer = 10;
 
+        private static bool showSigns = false;
+
         // sound card settings
         private static int SAMPLE_RATE = 44100;
-        private int buffer_update_hz = 20;
+        private int BUFFER_UPDATE_FREQUENCY = 20; // 20 Hz
 
         // spectrogram and FFT settings
-        int fft_size;
+        int FFT_SIZE = (int)Math.Pow(2, 13); // must be a multiple of 2 (8192);
 
         public MainForm()
         {
             InitializeComponent();
+            signs = GetSharpsFlatsPicBoxes();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // FFT/spectrogram configuration
-            unanalyzed_max_sec = 2.5;
-            fft_size = (int)Math.Pow(2, 13); // must be a multiple of 2 (8192)
-            SPECTROGRAM_HEIGHT = fft_size / 2;
+            SPECTROGRAM_HEIGHT = FFT_SIZE / 2;
 
             // fill spectrogram data with empty values
-            spectrogram_data = new List<List<double>>();
             List<double> data_empty = new List<double>();
+
             for (int i = 0; i < SPECTROGRAM_HEIGHT; i++) data_empty.Add(0);
             for (int i = 0; i < SPECTROGRAM_WIDTH; i++) spectrogram_data.Add(data_empty);
 
@@ -72,24 +79,29 @@ namespace PMSProject
             waveIn.DeviceNumber = 0;
             waveIn.DataAvailable += OnAudioBufferCaptured;
             waveIn.WaveFormat = new NAudio.Wave.WaveFormat(SAMPLE_RATE, 1);
-            waveIn.BufferMilliseconds = 1000 / buffer_update_hz;
+            waveIn.BufferMilliseconds = 1000 / BUFFER_UPDATE_FREQUENCY;
             waveIn.StartRecording();
         }
 
         void AnalyzeValues()
         {
-            if (fft_size == 0) return;
-            if (unanalyzed_values.Count < fft_size) return;
-            label4.Text = string.Format("Analysis: {0}", unanalyzed_values.Count);
-            while (unanalyzed_values.Count >= fft_size) AnalyzeChunk();
-            label4.Text = string.Format("Analysis: up to date");
+            if (FFT_SIZE == 0 || unanalyzed_values.Count < FFT_SIZE)
+                return;
+
+            //if (unanalyzed_values.Count < FFT_SIZE) return;
+            //label4.Text = string.Format("Analysis: {0}", unanalyzed_values.Count);
+
+            while (unanalyzed_values.Count >= FFT_SIZE)
+                AnalyzeChunk();
+
+            //label4.Text = string.Format("Analysis: up to date");
         }
 
         void AnalyzeChunk()
         {
             // fill data with FFT info
-            var data = new short[fft_size];
-            data = unanalyzed_values.GetRange(0, fft_size).ToArray();
+            var data = new short[FFT_SIZE];
+            data = unanalyzed_values.GetRange(0, FFT_SIZE).ToArray();
 
             // remove the left-most (oldest) column of data
             spectrogram_data.RemoveAt(0);
@@ -98,21 +110,21 @@ namespace PMSProject
             var newData = new List<double>();
 
             // prepare the complex data which will be FFT'd
-            Complex[] fft_buffer = new Complex[fft_size];
-            for (int i = 0; i < fft_size; i++)
+            Complex[] fft_buffer = new Complex[FFT_SIZE];
+            for (int i = 0; i < FFT_SIZE; i++)
             {
                 //fft_buffer[i].X = (float)unanalyzed_values[i]; // no window
-                fft_buffer[i].X = (float)(unanalyzed_values[i] * FastFourierTransform.HammingWindow(i, fft_size));
+                fft_buffer[i].X = (float)(unanalyzed_values[i] * FastFourierTransform.HammingWindow(i, FFT_SIZE)); // Hamming Window
                 fft_buffer[i].Y = 0;
             }
 
             // perform the FFT
-            FastFourierTransform.FFT(true, (int)Math.Log(fft_size, 2.0), fft_buffer);
+            FastFourierTransform.FFT(true, (int)Math.Log(FFT_SIZE, 2.0), fft_buffer);
 
             // fill that new data list with fft values
             for (int i = 0; i < spectrogram_data[spectrogram_data.Count - 1].Count; i++)
             {
-                // sqrt(X^2+Y^2)?
+                // sqrt(X^2+Y^2)
                 //var val = (double)fft_buffer[i].X + (double)fft_buffer[i].Y;
                 var val = Math.Sqrt(Math.Pow(fft_buffer[i].X, 2) + Math.Pow(fft_buffer[i].Y, 2));
                 //val = Math.Abs(val);
@@ -121,11 +133,21 @@ namespace PMSProject
                 newData.Add(val);
             }
 
+            ProccessNotes(newData);
+
+            //newData.Reverse();
+            spectrogram_data.Insert(spectrogram_data.Count, newData);
+
+            // remove a certain amount of unanalyzed data
+            unanalyzed_values.RemoveRange(0, FFT_SIZE / _pixelsPerBuffer);
+        }
+
+        void ProccessNotes(List<double> data)
+        {
             var filterRange = 10;
 
-
-            var myData = newData.ToList();
-            myData.RemoveRange(300, newData.Count - 300);
+            var myData = data.ToList();
+            data.RemoveRange(300, data.Count - 300);
 
             var firstIndex = myData.MaxIndex();
 
@@ -135,40 +157,40 @@ namespace PMSProject
             ArrayUtils.RemovePeakNeighbours(myData, secondIndex, filterRange);
             var thirdIndex = myData.MaxIndex();
 
-            var firstFreq = (firstIndex + 1) * SAMPLE_RATE / fft_size;
-            var secondFreq = (secondIndex + 1) * SAMPLE_RATE / fft_size;
-            var thirdFreq = (thirdIndex + 1) * SAMPLE_RATE / fft_size;
+            var firstFreq = (firstIndex + 1) * SAMPLE_RATE / FFT_SIZE;
+            var secondFreq = (secondIndex + 1) * SAMPLE_RATE / FFT_SIZE;
+            var thirdFreq = (thirdIndex + 1) * SAMPLE_RATE / FFT_SIZE;
 
-            if (newData[firstIndex] < 0.5)
+            if (data[firstIndex] < 0.5)
             {
                 firstFreq = secondFreq = thirdFreq = -1;
             }
 
-            if (newData[secondIndex] < 0.25)
+            if (data[secondIndex] < 0.25)
             {
                 secondFreq = thirdFreq = -1;
             }
 
-            if (newData[thirdIndex] < 0.125)
+            if (data[thirdIndex] < 0.125)
             {
                 thirdFreq = -1;
             }
 
             Invoke(new MethodInvoker(delegate ()
             {
-                _firstNote = NotesUtils.ComputeNote(firstFreq);
-                _secondNote = NotesUtils.ComputeNote(secondFreq);
-                _thirdNote = NotesUtils.ComputeNote(thirdFreq);
+                _newFirstNote = NotesUtils.ComputeNote(firstFreq);
+                _newSecondNote = NotesUtils.ComputeNote(secondFreq);
+                _newThirdNote = NotesUtils.ComputeNote(thirdFreq);
 
-                var previousNote = NotesUtils.GetPrevoiusNote(_firstNote);
-                var nextNote = NotesUtils.GetNextNote(_firstNote);
+                var previousNote = NotesUtils.GetPrevoiusNote(_newFirstNote);
+                var nextNote = NotesUtils.GetNextNote(_newFirstNote);
 
-                actualNoteLabel.Text = _firstNote.FullNoteName;
+                actualNoteLabel.Text = _newFirstNote.FullNoteName;
                 previusNoteLabel.Text = previousNote.FullNoteName;
                 nextNoteLabel.Text = nextNote.FullNoteName;
-                firstTrackBar.Value = 50 + _firstNote.DifferenceFromReference;
+                firstTrackBar.Value = 50 + _newFirstNote.DifferenceFromReference;
 
-                if (Math.Abs(_firstNote.DifferenceFromReference) > 10)
+                if (Math.Abs(_newFirstNote.DifferenceFromReference) > 10)
                 {
                     firstTrackBar.BackColor = Color.Red;
                     actualNoteLabel.ForeColor = Color.Red;
@@ -178,19 +200,11 @@ namespace PMSProject
                     firstTrackBar.BackColor = Color.Green;
                     actualNoteLabel.ForeColor = Color.Green;
                 }
-                
 
                 firstFreqLabel.Text = "First freq: " + firstFreq.ToString() + " Hz";
                 secondFreqLabel.Text = "Second freq: " + secondFreq.ToString() + " Hz";
                 thirdFreqLabel.Text = "Thrid freq: " + thirdFreq.ToString() + " Hz";
             }));
-
-            //newData.Reverse();
-            spectrogram_data.Insert(spectrogram_data.Count, newData);
-
-            // remove a certain amount of unanalyzed data
-            unanalyzed_values.RemoveRange(0, fft_size / _pixelsPerBuffer);
-
         }
 
         void UpdateBitmapWithData()
@@ -258,9 +272,9 @@ namespace PMSProject
                 unanalyzed_values.RemoveRange(0, unanalyzed_values.Count - unanalyzed_max_count);
             }
 
-            label1.Text = string.Format("Buffers captured: {0}", _buffersCaptured);
-            label2.Text = string.Format("Buffer size: {0}", values.Length);
-            label3.Text = string.Format("Unanalyzed values: {0}", unanalyzed_values.Count);
+            //label1.Text = string.Format("Buffers captured: {0}", _buffersCaptured);
+            //label2.Text = string.Format("Buffer size: {0}", values.Length);
+            //label3.Text = string.Format("Unanalyzed values: {0}", unanalyzed_values.Count);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -273,24 +287,37 @@ namespace PMSProject
         {
             PanelUtils.InitializeGraphics(e.Graphics);
             PanelUtils.InitializePanel(panel1, null);
-            PanelUtils.InitializeSigns(GetSharpsFlatsPicBoxes());
+            PanelUtils.InitializeSigns(signs);
 
-            PanelUtils.DrawNote(_firstNote, panel1);
-            PanelUtils.DrawNote(_secondNote, panel1);
-            PanelUtils.DrawNote(_thirdNote, panel1);
+            PanelUtils.DrawNote(_firstNote, panel1, showSigns);
+            PanelUtils.DrawNote(_secondNote, panel1, showSigns);
+            PanelUtils.DrawNote(_thirdNote, panel1, showSigns);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            this.Refresh();
-            RefreshSigns();
+            if (!_newThirdNote.FullNoteName.Equals(_thirdNote.FullNoteName)
+                || !_newSecondNote.FullNoteName.Equals(_secondNote.FullNoteName)
+                || !_newFirstNote.FullNoteName.Equals(_firstNote.FullNoteName))
+            {
+                _firstNote = _newFirstNote;
+                _secondNote = _newSecondNote;
+                _thirdNote = _newThirdNote;
+
+                this.Refresh();
+
+                if (showSigns)
+                {
+                    RefreshSigns();
+                }
+                
+            }
+            
         }
 
         private void RefreshSigns()
         {
-            Dictionary<string, PictureBox> list = GetSharpsFlatsPicBoxes(); 
-
-            foreach(var lst in list)
+            foreach (var lst in signs)
             {
                 lst.Value.Visible = false;
             }
@@ -299,7 +326,7 @@ namespace PMSProject
 
         public Dictionary<string, PictureBox> GetSharpsFlatsPicBoxes()
         {
-            var ls = new Dictionary<string,PictureBox>();
+            var ls = new Dictionary<string, PictureBox>();
 
             ls.Add("F#/Gb2", Fs2);
             ls.Add("F#/Gb3", Fs3);
@@ -322,6 +349,11 @@ namespace PMSProject
             ls.Add("D#/Eb3", Eb3);
             ls.Add("D#/Eb4", Eb4);
             ls.Add("D#/Eb5", Eb5);
+
+            foreach (var item in ls)
+            {
+                item.Value.BackColor = Color.Transparent;
+            }
 
             return ls;
         }

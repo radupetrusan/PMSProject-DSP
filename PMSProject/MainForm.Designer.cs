@@ -55,27 +55,27 @@
             this.actualNoteLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Fs5 = new System.Windows.Forms.PictureBox();
+            this.Fs4 = new System.Windows.Forms.PictureBox();
+            this.Fs3 = new System.Windows.Forms.PictureBox();
+            this.Fs2 = new System.Windows.Forms.PictureBox();
+            this.Cs5 = new System.Windows.Forms.PictureBox();
+            this.Cs4 = new System.Windows.Forms.PictureBox();
+            this.Eb5 = new System.Windows.Forms.PictureBox();
+            this.Eb4 = new System.Windows.Forms.PictureBox();
+            this.Eb3 = new System.Windows.Forms.PictureBox();
+            this.Bb4 = new System.Windows.Forms.PictureBox();
+            this.Bb3 = new System.Windows.Forms.PictureBox();
+            this.Bb2 = new System.Windows.Forms.PictureBox();
+            this.Ab4 = new System.Windows.Forms.PictureBox();
+            this.Ab3 = new System.Windows.Forms.PictureBox();
             this.Ab2 = new System.Windows.Forms.PictureBox();
             this.Cs3 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Ab3 = new System.Windows.Forms.PictureBox();
-            this.Ab4 = new System.Windows.Forms.PictureBox();
-            this.Bb2 = new System.Windows.Forms.PictureBox();
-            this.Bb3 = new System.Windows.Forms.PictureBox();
-            this.Bb4 = new System.Windows.Forms.PictureBox();
-            this.Eb3 = new System.Windows.Forms.PictureBox();
-            this.Eb4 = new System.Windows.Forms.PictureBox();
-            this.Eb5 = new System.Windows.Forms.PictureBox();
-            this.Cs4 = new System.Windows.Forms.PictureBox();
-            this.Cs5 = new System.Windows.Forms.PictureBox();
-            this.Fs2 = new System.Windows.Forms.PictureBox();
-            this.Fs3 = new System.Windows.Forms.PictureBox();
-            this.Fs4 = new System.Windows.Forms.PictureBox();
-            this.Fs5 = new System.Windows.Forms.PictureBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,25 +86,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.firstTrackBar)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cs5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cs4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ab4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ab3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ab2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cs3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ab3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ab4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cs4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cs5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs5)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -129,9 +129,8 @@
             this.label1.Location = new System.Drawing.Point(279, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
             // 
             // label2
             // 
@@ -139,9 +138,8 @@
             this.label2.Location = new System.Drawing.Point(279, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
             // 
             // label3
             // 
@@ -149,9 +147,8 @@
             this.label3.Location = new System.Drawing.Point(279, 49);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
             // 
             // label4
             // 
@@ -159,9 +156,8 @@
             this.label4.Location = new System.Drawing.Point(279, 65);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
             // 
             // label5
             // 
@@ -211,6 +207,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.Visible = false;
             // 
             // label8
             // 
@@ -221,6 +218,7 @@
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 10;
             this.label8.Text = "scale factor:";
+            this.label8.Visible = false;
             // 
             // checkBox1
             // 
@@ -232,6 +230,7 @@
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "log scale";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // splitContainer1
             // 
@@ -286,7 +285,7 @@
             // thirdFreqLabel
             // 
             this.thirdFreqLabel.AutoSize = true;
-            this.thirdFreqLabel.Location = new System.Drawing.Point(489, 65);
+            this.thirdFreqLabel.Location = new System.Drawing.Point(408, 66);
             this.thirdFreqLabel.Name = "thirdFreqLabel";
             this.thirdFreqLabel.Size = new System.Drawing.Size(55, 13);
             this.thirdFreqLabel.TabIndex = 14;
@@ -295,7 +294,7 @@
             // secondFreqLabel
             // 
             this.secondFreqLabel.AutoSize = true;
-            this.secondFreqLabel.Location = new System.Drawing.Point(489, 40);
+            this.secondFreqLabel.Location = new System.Drawing.Point(408, 41);
             this.secondFreqLabel.Name = "secondFreqLabel";
             this.secondFreqLabel.Size = new System.Drawing.Size(68, 13);
             this.secondFreqLabel.TabIndex = 13;
@@ -304,7 +303,7 @@
             // firstFreqLabel
             // 
             this.firstFreqLabel.AutoSize = true;
-            this.firstFreqLabel.Location = new System.Drawing.Point(489, 15);
+            this.firstFreqLabel.Location = new System.Drawing.Point(408, 16);
             this.firstFreqLabel.Name = "firstFreqLabel";
             this.firstFreqLabel.Size = new System.Drawing.Size(50, 13);
             this.firstFreqLabel.TabIndex = 12;
@@ -411,16 +410,159 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // vScrollBar1
+            // Fs5
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(920, 3);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 80);
-            this.vScrollBar1.TabIndex = 2;
+            this.Fs5.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Fs5.Location = new System.Drawing.Point(92, -3);
+            this.Fs5.Name = "Fs5";
+            this.Fs5.Size = new System.Drawing.Size(34, 35);
+            this.Fs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Fs5.TabIndex = 20;
+            this.Fs5.TabStop = false;
+            this.Fs5.Visible = false;
             // 
-            // timer2
+            // Fs4
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.Fs4.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Fs4.Location = new System.Drawing.Point(92, 51);
+            this.Fs4.Name = "Fs4";
+            this.Fs4.Size = new System.Drawing.Size(34, 35);
+            this.Fs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Fs4.TabIndex = 19;
+            this.Fs4.TabStop = false;
+            this.Fs4.Visible = false;
+            // 
+            // Fs3
+            // 
+            this.Fs3.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Fs3.Location = new System.Drawing.Point(92, 102);
+            this.Fs3.Name = "Fs3";
+            this.Fs3.Size = new System.Drawing.Size(34, 35);
+            this.Fs3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Fs3.TabIndex = 18;
+            this.Fs3.TabStop = false;
+            this.Fs3.Visible = false;
+            // 
+            // Fs2
+            // 
+            this.Fs2.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Fs2.Location = new System.Drawing.Point(92, 154);
+            this.Fs2.Name = "Fs2";
+            this.Fs2.Size = new System.Drawing.Size(34, 35);
+            this.Fs2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Fs2.TabIndex = 17;
+            this.Fs2.TabStop = false;
+            this.Fs2.Visible = false;
+            // 
+            // Cs5
+            // 
+            this.Cs5.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Cs5.Location = new System.Drawing.Point(92, 20);
+            this.Cs5.Name = "Cs5";
+            this.Cs5.Size = new System.Drawing.Size(34, 35);
+            this.Cs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Cs5.TabIndex = 16;
+            this.Cs5.TabStop = false;
+            this.Cs5.Visible = false;
+            // 
+            // Cs4
+            // 
+            this.Cs4.Image = global::PMSProject.Properties.Resources.sharp;
+            this.Cs4.Location = new System.Drawing.Point(92, 74);
+            this.Cs4.Name = "Cs4";
+            this.Cs4.Size = new System.Drawing.Size(34, 35);
+            this.Cs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Cs4.TabIndex = 15;
+            this.Cs4.TabStop = false;
+            this.Cs4.Visible = false;
+            // 
+            // Eb5
+            // 
+            this.Eb5.Image = global::PMSProject.Properties.Resources.flat;
+            this.Eb5.Location = new System.Drawing.Point(92, 0);
+            this.Eb5.Name = "Eb5";
+            this.Eb5.Size = new System.Drawing.Size(35, 35);
+            this.Eb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Eb5.TabIndex = 14;
+            this.Eb5.TabStop = false;
+            this.Eb5.Visible = false;
+            // 
+            // Eb4
+            // 
+            this.Eb4.Image = global::PMSProject.Properties.Resources.flat;
+            this.Eb4.Location = new System.Drawing.Point(92, 53);
+            this.Eb4.Name = "Eb4";
+            this.Eb4.Size = new System.Drawing.Size(35, 35);
+            this.Eb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Eb4.TabIndex = 13;
+            this.Eb4.TabStop = false;
+            this.Eb4.Visible = false;
+            // 
+            // Eb3
+            // 
+            this.Eb3.Image = global::PMSProject.Properties.Resources.flat;
+            this.Eb3.Location = new System.Drawing.Point(92, 105);
+            this.Eb3.Name = "Eb3";
+            this.Eb3.Size = new System.Drawing.Size(35, 35);
+            this.Eb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Eb3.TabIndex = 12;
+            this.Eb3.TabStop = false;
+            this.Eb3.Visible = false;
+            // 
+            // Bb4
+            // 
+            this.Bb4.Image = global::PMSProject.Properties.Resources.flat;
+            this.Bb4.Location = new System.Drawing.Point(92, 22);
+            this.Bb4.Name = "Bb4";
+            this.Bb4.Size = new System.Drawing.Size(35, 35);
+            this.Bb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bb4.TabIndex = 11;
+            this.Bb4.TabStop = false;
+            this.Bb4.Visible = false;
+            // 
+            // Bb3
+            // 
+            this.Bb3.Image = global::PMSProject.Properties.Resources.flat;
+            this.Bb3.Location = new System.Drawing.Point(92, 77);
+            this.Bb3.Name = "Bb3";
+            this.Bb3.Size = new System.Drawing.Size(35, 35);
+            this.Bb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bb3.TabIndex = 10;
+            this.Bb3.TabStop = false;
+            this.Bb3.Visible = false;
+            // 
+            // Bb2
+            // 
+            this.Bb2.Image = global::PMSProject.Properties.Resources.flat;
+            this.Bb2.Location = new System.Drawing.Point(92, 127);
+            this.Bb2.Name = "Bb2";
+            this.Bb2.Size = new System.Drawing.Size(35, 35);
+            this.Bb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bb2.TabIndex = 9;
+            this.Bb2.TabStop = false;
+            this.Bb2.Visible = false;
+            // 
+            // Ab4
+            // 
+            this.Ab4.Image = global::PMSProject.Properties.Resources.flat;
+            this.Ab4.Location = new System.Drawing.Point(92, 30);
+            this.Ab4.Name = "Ab4";
+            this.Ab4.Size = new System.Drawing.Size(35, 35);
+            this.Ab4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Ab4.TabIndex = 8;
+            this.Ab4.TabStop = false;
+            this.Ab4.Visible = false;
+            // 
+            // Ab3
+            // 
+            this.Ab3.Image = global::PMSProject.Properties.Resources.flat;
+            this.Ab3.Location = new System.Drawing.Point(92, 82);
+            this.Ab3.Name = "Ab3";
+            this.Ab3.Size = new System.Drawing.Size(35, 35);
+            this.Ab3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Ab3.TabIndex = 7;
+            this.Ab3.TabStop = false;
+            this.Ab3.Visible = false;
             // 
             // Ab2
             // 
@@ -464,6 +606,13 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(920, 3);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 80);
+            this.vScrollBar1.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
@@ -474,159 +623,9 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Ab3
+            // timer2
             // 
-            this.Ab3.Image = global::PMSProject.Properties.Resources.flat;
-            this.Ab3.Location = new System.Drawing.Point(92, 82);
-            this.Ab3.Name = "Ab3";
-            this.Ab3.Size = new System.Drawing.Size(35, 35);
-            this.Ab3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Ab3.TabIndex = 7;
-            this.Ab3.TabStop = false;
-            this.Ab3.Visible = false;
-            // 
-            // Ab4
-            // 
-            this.Ab4.Image = global::PMSProject.Properties.Resources.flat;
-            this.Ab4.Location = new System.Drawing.Point(92, 30);
-            this.Ab4.Name = "Ab4";
-            this.Ab4.Size = new System.Drawing.Size(35, 35);
-            this.Ab4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Ab4.TabIndex = 8;
-            this.Ab4.TabStop = false;
-            this.Ab4.Visible = false;
-            // 
-            // Bb2
-            // 
-            this.Bb2.Image = global::PMSProject.Properties.Resources.flat;
-            this.Bb2.Location = new System.Drawing.Point(92, 127);
-            this.Bb2.Name = "Bb2";
-            this.Bb2.Size = new System.Drawing.Size(35, 35);
-            this.Bb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Bb2.TabIndex = 9;
-            this.Bb2.TabStop = false;
-            this.Bb2.Visible = false;
-            // 
-            // Bb3
-            // 
-            this.Bb3.Image = global::PMSProject.Properties.Resources.flat;
-            this.Bb3.Location = new System.Drawing.Point(92, 77);
-            this.Bb3.Name = "Bb3";
-            this.Bb3.Size = new System.Drawing.Size(35, 35);
-            this.Bb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Bb3.TabIndex = 10;
-            this.Bb3.TabStop = false;
-            this.Bb3.Visible = false;
-            // 
-            // Bb4
-            // 
-            this.Bb4.Image = global::PMSProject.Properties.Resources.flat;
-            this.Bb4.Location = new System.Drawing.Point(92, 22);
-            this.Bb4.Name = "Bb4";
-            this.Bb4.Size = new System.Drawing.Size(35, 35);
-            this.Bb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Bb4.TabIndex = 11;
-            this.Bb4.TabStop = false;
-            this.Bb4.Visible = false;
-            // 
-            // Eb3
-            // 
-            this.Eb3.Image = global::PMSProject.Properties.Resources.flat;
-            this.Eb3.Location = new System.Drawing.Point(92, 105);
-            this.Eb3.Name = "Eb3";
-            this.Eb3.Size = new System.Drawing.Size(35, 35);
-            this.Eb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Eb3.TabIndex = 12;
-            this.Eb3.TabStop = false;
-            this.Eb3.Visible = false;
-            // 
-            // Eb4
-            // 
-            this.Eb4.Image = global::PMSProject.Properties.Resources.flat;
-            this.Eb4.Location = new System.Drawing.Point(92, 53);
-            this.Eb4.Name = "Eb4";
-            this.Eb4.Size = new System.Drawing.Size(35, 35);
-            this.Eb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Eb4.TabIndex = 13;
-            this.Eb4.TabStop = false;
-            this.Eb4.Visible = false;
-            // 
-            // Eb5
-            // 
-            this.Eb5.Image = global::PMSProject.Properties.Resources.flat;
-            this.Eb5.Location = new System.Drawing.Point(92, 0);
-            this.Eb5.Name = "Eb5";
-            this.Eb5.Size = new System.Drawing.Size(35, 35);
-            this.Eb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Eb5.TabIndex = 14;
-            this.Eb5.TabStop = false;
-            this.Eb5.Visible = false;
-            // 
-            // Cs4
-            // 
-            this.Cs4.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Cs4.Location = new System.Drawing.Point(92, 74);
-            this.Cs4.Name = "Cs4";
-            this.Cs4.Size = new System.Drawing.Size(34, 35);
-            this.Cs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cs4.TabIndex = 15;
-            this.Cs4.TabStop = false;
-            this.Cs4.Visible = false;
-            // 
-            // Cs5
-            // 
-            this.Cs5.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Cs5.Location = new System.Drawing.Point(92, 20);
-            this.Cs5.Name = "Cs5";
-            this.Cs5.Size = new System.Drawing.Size(34, 35);
-            this.Cs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cs5.TabIndex = 16;
-            this.Cs5.TabStop = false;
-            this.Cs5.Visible = false;
-            // 
-            // Fs2
-            // 
-            this.Fs2.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Fs2.Location = new System.Drawing.Point(92, 154);
-            this.Fs2.Name = "Fs2";
-            this.Fs2.Size = new System.Drawing.Size(34, 35);
-            this.Fs2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Fs2.TabIndex = 17;
-            this.Fs2.TabStop = false;
-            this.Fs2.Visible = false;
-            // 
-            // Fs3
-            // 
-            this.Fs3.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Fs3.Location = new System.Drawing.Point(92, 102);
-            this.Fs3.Name = "Fs3";
-            this.Fs3.Size = new System.Drawing.Size(34, 35);
-            this.Fs3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Fs3.TabIndex = 18;
-            this.Fs3.TabStop = false;
-            this.Fs3.Visible = false;
-            // 
-            // Fs4
-            // 
-            this.Fs4.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Fs4.Location = new System.Drawing.Point(92, 51);
-            this.Fs4.Name = "Fs4";
-            this.Fs4.Size = new System.Drawing.Size(34, 35);
-            this.Fs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Fs4.TabIndex = 19;
-            this.Fs4.TabStop = false;
-            this.Fs4.Visible = false;
-            // 
-            // Fs5
-            // 
-            this.Fs5.Image = global::PMSProject.Properties.Resources.sharp;
-            this.Fs5.Location = new System.Drawing.Point(92, -3);
-            this.Fs5.Name = "Fs5";
-            this.Fs5.Size = new System.Drawing.Size(34, 35);
-            this.Fs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Fs5.TabIndex = 20;
-            this.Fs5.TabStop = false;
-            this.Fs5.Visible = false;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
@@ -649,25 +648,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.firstTrackBar)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Fs5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fs2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cs5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cs4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ab4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ab3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ab2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cs3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ab3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ab4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eb5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cs4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cs5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fs5)).EndInit();
             this.ResumeLayout(false);
 
         }
